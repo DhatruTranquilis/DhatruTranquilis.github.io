@@ -11,3 +11,5 @@
 5. [Whistle Distributer (encoding=Telegramme)](https://dhatrutranquilis.github.io/ar_05)
 
 6. [Whistle Distributer (encoding=Elvish+Klingon)](https://dhatrutranquilis.github.io/ar_06)
+
+7. [Whistle Distributer (encoding=Cantonese)](https://dhatrutranquilis.github.io/ar_07)
