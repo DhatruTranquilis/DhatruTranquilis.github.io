@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>ar_06</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h2><a name="发哨人精灵语克林贡语版本）" class="md-header-anchor"></a><span>发哨人（精灵语+克林贡语版本）</span></h2><p><span>human </span><a href='javascript:void(0);'><span>TUCAO村</span></a><span> </span><em><span>今天</span></em></p><p><strong><span>生生不息，繁荣昌盛</span></strong></p><p><strong><span>精灵语</span></strong><span>一般指三者</span><strong><span>：</span></strong><span>Ⅰ.《魔戒》作者J.R.R.托尔金发明的精灵语，如昆雅（Quenya）、辛达林（Sindarin） ；Ⅱ.《龙与地下城》中的各种精灵语；Ⅲ.其他精灵语。</span></p><p>&nbsp;</p><p><img src="640-1583917669561.webp" referrerpolicy="no-referrer" alt="img"></p><p><img src="640-1583917669553.webp" referrerpolicy="no-referrer" alt="img"></p><p><img src="640-1583917669544.webp" referrerpolicy="no-referrer" alt="img"></p><p><strong><span>克林贡语</span></strong><span>（Klingon Language）是除了世界语之外最完善的人造语言。</span></p><p><span>这套语言是为了20十世纪末期美国著名的科幻电影和连续剧《星际迷航》（Star Trek）而发明的。在影片中，使用这种语言的克林贡人是一个掌握着高科技却野蛮好战的外星种族。</span></p><p><span>interviewed DeSDu&#39; 5 a.m. ma&#39;rIch 1, ghot tu&#39;lu&#39;. mej bID rep later, jIQochbe&#39; bIngDaq ghItlh leghlu&#39; QIn vo&#39; effin, director chach department DeSDu&#39; wuhan veng botlh ropyaH qach, &#39;ej DeSDu&#39; 5: 32 a.m. ma&#39;rIch 1, colleague Hegh jiang xueqing, thyroid not &#39;urmangvetlh web vIlaj &#39;ej Haq, director coronary chu&#39; pneumonia. cha&#39; jaj later, juS mei zhongming, deputy director ophthalmology DeSDu&#39; ropyaH qach, Ha&#39;, &#39;ej ghaH je li wenliang qaStaHvIS rap department.</span></p><p><span>loD quv ma&#39;rIch 9, 2020, loS medical naQ DeSDu&#39; wuhan veng Central ropyaH qach Hegh chu&#39; coronary pneumonia-qaSchoH outbreak, ropyaH qach, baS neH puS wa&#39; vo&#39; South jungwoq seafood malja&#39;&#39;e&#39;, moj, &#39;ej &#39;ach ngej ropyaH qach wuhan, qaStaHvIS wa&#39; according to media ja&#39;, ngej puS 200 nuvpu&#39;. wej Vice-Presidents mI&#39; functional directors &#39;ej DaH nobvam roD &#39;ej currently leH directors &#39;ay&#39; puS je ecmo.</span></p><p><span>DIr Hegh QIb rIn veng largest ropyaH qach, nuvpu&#39;, Del Qel &#39;e&#39; puS nuvpu&#39; neH ropyaH qach yIteb ghom &#39;Iv jatlh neH mourn &#39;ej ja&#39;chuq mamobtaHvIS tu&#39;lu&#39; ghItlhpu&#39;DI&#39; nuvpu&#39;.</span></p><p><span>&#39;eb &#39;oH webqu&#39;meH nov ghaj tragedy. december 30, 2019, virus waH ja&#39; Hev effin Sovbe&#39;lu&#39;bogh Qoylu&#39; pneumonia, &#39;ej SID gho ghaH qaStaHvIS Doq mu&#39; &quot;sars coronavirus&quot; &#39;ej, qaSmo&#39; ghel pong college classmates, &#39;oH mIllogh qonwI&#39; qoSta&#39; &#39;ej &#39;oH lulegh SoHvaN noN veqlargh Qel ghaH. Hoch ram vegh Qel gho neH wuhan yotlhmeyvo&#39; ja&#39; &#39;ej chorgh Qel &#39;Iv admonished pong police DaH nobvam nuvpu&#39; &#39;Iv &#39;oH forwarded.</span></p><p><span>qay&#39; luH ghu&#39;vam effin, &#39;Iv, law&#39; yotlhmeyvo&#39;, Hal interviewed pong ropyaH qach disciplinary yIlaDchu&#39; &#39;ej subjected &quot;unprecedented &#39;ej severe quntaHvIS&quot; targhHom veDDaq noch.</span></p><p><span>pov ma&#39;rIch 2, interview nob effin nanjing road ropyaH qach wuhan veng botlh ropyaH qach nuvpu&#39;. ba&#39; nIteb chach pa&#39; ghaH&#39;a&#39; chach department, baS puS 1,500 SID Hev jaj, yItamchoH, je neH homeless loD pa&#39;Daq chach yIlan.</span></p><p><span>earlier &#39;e&#39; Del effin je &quot;latlh admonish tugh Qel lughoS ghor&quot; ja&#39; &#39;ej &#39;op je &quot;whistle-blowers&quot;, DoQ, lugh effin jatlh ghaH &#39;oHbe&#39; whistle-blower, &#39;ach &quot;whistle-blower.&quot; qaStaHvIS interview, mu&#39; &quot;pay&quot; mentioned effin puS poH, interviewed wej whistle, jatlh &#39;Iv especially decease colleagues, taH pay ghaH &quot;DaHjaj tu&#39;lu&#39; vISov, criticism, buSHa&#39; ghaH jIH Dat jatlh&quot; qan puqloD &quot;wIjuS?&quot;</span></p><p><span>qaStaH nuq wuhan veng Central ropyaH qach effin &#39;ej QuQ ghaH &#39;ej qaStaHvIS jar jIvumlI&#39; cha&#39; qaSjaj pagh?</span></p><p><span>effin</span></p><p><span>　　unprecedented reprimand</span></p><p><span>　　december 16 Qav DIS, SID Hev maH neH chach department nanjing road ropyaH qach yoS. fever inexplicably jen wej QaQ Hergh, ba&#39; porgh Hat movement reH. 22nd respiratory department, Qu&#39; fiber bronchotoscopy SuD alveolar irrigation, tIn mInDu&#39;Daj &#39;ej boch, vay&#39; Data&#39;nISbogh jenwI&#39;-throughput sequencing ngeH Hur &#39;ej later verbally &#39;e&#39; coronavirus ja&#39;. ngugh, choljaHmey specific tube QongDaq colleagues choHchu&#39;bogh poH puS: Director Ai, coronavirus ja&#39; nuv. vaj Qap SID neH South jungwoq seafood later ghoj maH.</span></p><p><span>　　vaj december 27th, nanjing road ropyaH qach yoS, department, qaStaHvIS 40, Hutlh vay&#39; underlie rop, mess tagh, neH 90 vatlhvI&#39; saturation yInSIp, Qel lor lughoS treated reH latlh qabDaq ropyaH qach below tlhoS 10 jaj qaSjaj pagh Hutlh vay&#39; improvement latlh SID &#39;ej, respiratory Qo&#39;noS qab law&#39; Hev SID qaStaHvIS ropyaH qach. je alveolar irrigation tIn mInDu&#39;Daj &#39;ej boch ngeH waH tlhap chenmoH fiber bronchoscopy.</span></p><p><span>DeSDu&#39; Qo&#39;noS DungluQ december 30th, screenshot wechat quv puS, baS laD ngeH jIH classmates pa&#39; tongji ropyaH qach Qap: &quot;Qo&#39; tu&#39;lu&#39; nuvpu&#39; ngoDqoq luHar nIvbogh jen fever … ghoS South jungwoq qen,&quot; teHchugh ghu&#39; teH, jIHtaH typical tagh infection SID ct vIlegh De&#39;wI&#39;, ct 11 ta jIH ghelmeH jIHvaD cha&#39;DIch video ghaH chach SID, po ghotvam&#39;e&#39; ghaHvaD je seafood malja&#39;&#39;e&#39; neH South jungwoq.</span></p><p><span>　　neH qaSpu&#39;DI&#39; 4 p.m. jaj, vaj laD ja&#39; qar lughoStaHvIS colleagues: sars coronavirus, SuD pus pseudomonocyta, 46 Segh oral ghap respiratory implants. legh jIH ja&#39; law&#39; &#39;ej laD tlha&#39; note: sars coronavirus Vas be mIr rna virus. &#39;elbogh mode virus transmission laH significantly contagious luH, laH multiple Da&#39;oghlaHneSchugh le&#39; pneumonia, pneumonia je known je atypical pat Sov wIHutlh yotlhmeyvo&#39; SoQ droplets joq contact respiratory secretions SID,.</span></p><p><span>　　ngugh, ghIj bIr sweat, baS ta&#39; terrible. chID respiratory department &#39;ej moj ja&#39; respiratory department meq SID &#39;ach Heroy&#39;DeS nov quchwI&#39;pu&#39;mo&#39; attention &#39;ej vam ropyaH qach public porgh Damo&#39; ghaH department ropyaH qach department &#39;ej SIbI&#39; jachtaHvIS jIH. ngugh, ropyaH qach respiratory department director qaS &#39;e&#39; legh lojmIt, sars nuv, ghaHvaD jatlh grabbed jIH SID Hev vo&#39; department, Doch vItu&#39; maghaj. vaj qay&#39; jatlh qaStaHvIS wa&#39;DIch glance. &#39;oH qay&#39; vISov.</span></p><p><span>　　qaSpu&#39;DI&#39; jatlhpu&#39; ropyaH qach, ja&#39; je vIngeHlI&#39; classmates, specially, qaStaHvIS petaQ &quot;monocytobacteria, 46 bIquv implants oral ghap respiratory ngeb sars coronavirus, SuD pus&quot; tlhegh ghobe&#39;-Qovpatlh tlhIH gho, nItebHa&#39; maDIj, mangoH in order to ghaH qawmoH attention, attention. ja&#39; je vIngeHlI&#39; neH department Qel ghom, Hoch prevention yIqIm qawmoH.</span></p><p><span>　　Hoch ram, Doch Hoch rIn yotlhmeyvo&#39; all over jIHDaq gho petaQ nItebHa&#39; maDIj, mangoH jIH photo &#39;e&#39; li wenliang neH ghom DaSovrup je later ghoj DaH nobvam. vaj vay&#39; chaq qab ghaHlaw&#39; tIqwIj. 10: 20, QIn, ngeH ropyaH qach SaH porgh Damo&#39; ghaH committee tu&#39;, &#39;angbogh Da vIHtaHbogh unexplain pneumonia &#39;e&#39; Qay, wej arbitrarily qopHa&#39; Hur, lIm, QInvam vaj because of De&#39; leakage lIm, lughajbej luH, luH webqu&#39;meH nov.</span></p><p><span>　　vaj ghIj &#39;e&#39; QIn SIbI&#39; juS jIH lulegh classmates. &#39;e&#39; laH wej Daqvo&#39; relevant De&#39; ghom jatlhqa&#39; stressed qaSpu&#39;DI&#39; vIHtaHbogh rep, Ha&#39; ropyaH qach tu&#39;. later, jaj DeSDu&#39; 11: 46 p.m. january 1, QIn jIHvaD tlhob Ha&#39; rIn po veb ngeH jIH ropyaH qach surveillance &#39;ay&#39; chief.</span></p><p><span>　　Hoch ram QongDI&#39;, SoHvaD yIDaQo&#39;, tlhe&#39; around wej pum jIH vIHar &#39;ach &#39;e&#39; cha&#39; Dop reH ghaj Hoch, vabDot &#39;ach qawmoH adverse &#39;angbogh Da, wuhan medical naQ prevention yIqIm wej vaj mangghomDajDaq ta&#39; qab Hot. veb po, neH 8 o&#39;clock, wej loS shift rIn, chongaghpa&#39; jatlhpu&#39; jIvumlI&#39; pong urged.</span></p><p><span>　　qaSpu&#39;DI&#39; interview, subjected jIH unprecedented &#39;ej SoHvaD severe quntaHvIS.</span></p><p><span>　　legh &quot;ropyaH qach &#39;e&#39; effin, law&#39; wuhan veng botlh ropyaH qach chach department director, targhHom veDDaq noch, chay&#39; laH tu&#39;lu&#39; Hutlh Sun vay&#39; joS DIvI&#39; principle pagh ghoS qep nach, be director criticized laH wej pep Hoch maH?&quot; jatlh poH, ra&#39;wI&#39; quv puS lut original. maleghmeH laH wej achat, bIngDaq ghItlh leghlu&#39; QIn QumpIn ngeH neH face-to-face jaw pagh phone calls, wej vay&#39; vIHtaHbogh pneumonia, &quot;laH qar&#39;a&#39; vabDot loDnal&quot; vIjatlh chaw&#39; laH jIHvaD loj wItI&#39;nISmo&#39; puS 200 wa&#39; pong wa&#39; nuv verbal QumpIn Daq, pa&#39; department.</span></p><p><span>　　naQ nuv pay&#39; SoH wej Qap nuv Duj&#39;e&#39; wej criticizing ghaH &#39;ach &#39;oH law&#39; &#39;e&#39; Qaw&#39; naQ development QaQ ghu&#39; wuhan veng jIba&#39;taHvIS HItlhej mob. SoHvaD jochqu&#39; feeling vIghaj, normally Sagh, let-working nuvpu&#39;, &#39;e&#39; nuq vIta&#39; pong che&#39;, vItu&#39; reasonable, Qagh jIH? ja&#39; legh je ja&#39; jIH ropyaH qach, jIH &#39;ej classmates, peer--peer tam SabtaHbogh SID, wej narghpa&#39; SID De&#39; private vay&#39; equivalent medical ghojwI&#39; case ja&#39;chuq DaSovDI&#39; &#39;e&#39; tu&#39; potlh virus neH SID ghel latlh Qel, qatlh pagh qar&#39;a&#39; je clinician, chonayta&#39;,? &#39;e&#39; Qel, lugh Duj ghotvam&#39;e&#39;? vay&#39; vIta&#39; QIH? Qel, chenmoH jIH Qombe&#39;chugh nuv normally, je latlh words, nuq DaHar&#39;a&#39; vay&#39;.</span></p><p><span>　　SoHvaD emotional, jatlh Doch vay&#39; Data&#39;nISbogh ghaH nuvpu&#39; leS mu&#39;wIj, simply choqelDI&#39; bIghHa&#39;. wasn&#39;t neH neH position vum taH position je ghor tlhap neH ghIq. wej Qochbe&#39; ra&#39;wI&#39;, vaj ghu&#39;vam jIHvaD waH poH jatlh.</span></p><p><span>　　Hoch ram juH Dachegh, SopwI&#39; ngoDqoq luHar chu&#39; qaSpu&#39;DI&#39; jatlh lojmIt loDnal je, vaj qaS vay&#39;, QaQ puq ghaHDI&#39; tIn Daghaj. HoSqu&#39;mo&#39; potlhwIj cha&#39;DIch SoHvaD mach, neH puS 1 DIS qan. ghaH Hot chIm legh poH, vaj Do&#39;qu&#39; ghaH, january 20, nuvpu&#39; jatlh zhong nanshan, qaS nuq jaj DaQorghrup&#39;a&#39; ghaH wej DaQorghrup&#39;a&#39; ghaH. during poH qorDu&#39; ghoS ghom&#39;a&#39; Daq je botuQtaHvIS tuQ HeghDI&#39; ghoS chaH neH qawmoH jIH.</span></p><p><span>　peripheral Department</span></p><p><span>　　ghaH chorgh nuvpu&#39; pong admonishment wa&#39; yIDaQo&#39; nIvbogh nuvpu&#39;. loQ ngoD wej admonished jIH pong Public Hung Bureau &#39;ej vaj jup tlhob whistleman?</span></p><p><span>　　&#39;ach muqIp interview let, SoHvaD tIn. HeghDI&#39; yIchegh jIH, tIq naQ qa&#39; ghor, qar HoS, Sagh Qap, &#39;ej ghIq jIHvaD ghel nuvpu&#39;, pagh jIH jang vItu&#39;.</span></p><p><span>　　Hoch laH vIta&#39; Suq chach department protection yIqIm wa&#39;DIch. qaStaHvIS chach department, puS 200 nuv tu&#39;lu&#39; qaSchoH january 1st, SoH ghaH mIw woDDI&#39; protection &#39;e&#39; vItlhob &#39;ej botuQtaHvIS, mIv &#39;ej ghop tuQ ghaj Hoch. wa&#39; jaj neH shift botuQtaHvIS wej tuQ ghojmoq loD, ghaH SIbI&#39; qun jIH chaDo&#39;maq, &#39;e&#39; SopwI&#39; &quot;qaSpu&#39;DI&#39; wej botuQtaHvIS tuQ wej chol Qap.</span></p><p><span>january 9th, ghorgh SanejmeH Qap, SID tuS legh pre-screen desk, vIlegh &#39;ej vo&#39; jaj, chaHvaD botuQtaHvIS SID &#39;ej QuQ &#39;Iv Ha&#39; SID, wa&#39; nuv lulegh wInobqang vIja&#39;, Huch, QInvam HeghDI&#39; &#39;e&#39; pagh juS, emphasize naDev protection, rach botuQtaHvIS tuQ je vIneH jatlh Hur, wej toD porghvetlh SoHvaD contradictory.</span></p><p><span>　　qar &#39;It &#39;ej jIvumnISchugh. isolation Sutchaj belmoH Hur tuQ lan ghoQIjneS &#39;op Qel, ropyaH qach ghom &#39;e&#39; yInISQo&#39;, vaj jatlh lIm luH isolation Sutchaj belmoH wearoutside. nuvpu&#39; department isolation suit lan neH chIS wep qoD, baS &#39;oHbe&#39; in line with norms, absurd jIH yInISQo&#39;.</span></p><p><span>　　latlh je latlh SID legh maH, yotlhmeyvo&#39; mIchHom radius Suq &#39;u&#39; &#39;u&#39;, wa&#39;DIch chaq related south jungwoq seafood malja&#39;&#39;e&#39; &#39;ej vaj yotlhmeyvo&#39;, radius Suq &#39;u&#39; &#39;ej &#39;u&#39;. law&#39; qorDu&#39;-SIQ, SoS Soj ngeH puqloD ghaj nuvpu&#39; wa&#39;DIch Soch rop. pa&#39; owner clinic rop, &#39;ach je, petaQ injections Suq juS ghaH, je &#39;ugh SID. pa&#39; ghob&#39;e&#39; vay&#39; juS vISov. tlhoy pagh nuv, South jungwoq seafood malja&#39;&#39;e&#39; SoQ january 1, chay&#39; puS &#39;ej latlh SID vaj?</span></p><p><span>　　nIvbogh poH &#39;e&#39; vIHar, vaj not &#39;e&#39; yIjot ghel vIHtaHbogh qaS mung mIw, jIHvaD qun, &#39;ej ghIq latlh respiratory po&#39; qa&#39;majvaD ghu&#39;mey qaSlaH Qum jIH ropyaH qach &#39;emvo&#39; nItebHa&#39;, chaq ghu&#39; ghaH Dunmo&#39;, tlhob chaH. vaj Hoch Dugh vaj january 1st, wouldn&#39;t tu&#39;lu&#39; joHpu&#39;vam law&#39; tragedies.</span></p><p><span>&#39;etlhmey january 3rd, nanjing road ropyaH qach yoS, qaStaHvIS pov DaH toD urology Qel ghom Qap qan director, dr. hu weifeng, 43 ben, review; hu ziwei infection ja&#39; chach department chach pa&#39; rachwI&#39; department &#39;ej, ghaH ghotvam wa&#39;DIch ngej ghojmoq neH central ropyaH qach, chief medical department ja&#39; wa&#39;DIch pong jIH, &#39;ej vaj chach qep, DeSDu&#39; &#39;oH &quot;cha&#39; HuHwIj infection, viral pneumonia?&quot; lan instructions &#39;uch ropyaH qach choH ja&#39; &quot;ghomHa&#39; cha&#39; HuHwIj neH infection&quot; je legh Qav weekly qep january 16th, jatlh vice-president: &quot;loQ medical common Dapvetlh wIghaj Hoch &#39;ej bIH&#39;e&#39; vaj wej ghIj Qel highly senior.&quot; taH mIw latlh ra&#39;wI&#39; &#39;ej taH: &quot;pagh juS, laH bot &#39;ej yISeH &#39;oH.&quot; later, jaj january 17, hospitalized jiang xueqing, &#39;ej 10 jaj later ghaH intubate je ecmo.</span></p><p><span>　　central ropyaH qach cost nIvmo&#39; vaj &#39;e&#39; pagh vay&#39; Data&#39;nISbogh je transparency De&#39; jawbe&#39; naQ medical Hutlh ghaj. legh SoH pum nuv, chach department &#39;ej respiratory department DaSovrup wej &#39;ugh, mo&#39; protective qa&#39;pu&#39; treatment leS DI&#39; maH Suq rop je. peripheral department &#39;ugh, li wenliang ophthalmology, vaj jiang xueqing nIm department.</span></p><p><span>　　jiang xueqing qar majQa&#39; nuv, medical laHmey jen, naQ ropyaH qach cha&#39; chinese Qel van&#39;a&#39; wa&#39;. &#39;ej reH jIl, unit wIghaj, qaStaHvIS loSmaH rav popmey, qaStaHvIS wejmaHlogh rav yIn, relations majQa&#39;, &#39;ach roD HoSqu&#39;mo&#39; Qap je busy, neH Durap, qaStaHvIS ropyaH qach activities ghom chu&#39; laH. ghaH workaholic, vo&#39; vImughta&#39; pa&#39;Daq operating ngaghwI&#39; clinic. wej deliberately qet &#39;Iv, vaj yIqIm SoH tuQ botuQtaHvIS ja&#39;, jiang director. poH HoS inquire vIHtaHbogh Dochmeyvetlh vIchel je ghaH &#39;ej qaSnISbej ghaH qaStaHvIS mIw tIn: &quot;nuq potlh&#39;a&#39;? pneumonia.&quot; ghotvam&#39;e&#39; nuq, nuvpu&#39; department jatlh jIH.</span></p><p><span>　　vaj ghuH Hoch Qel qaStaHvIS poH, chaq qar&#39;a&#39; tu&#39;lu&#39; jaj. vaj je ghom pay jIH Huch law&#39;, DaHjaj tu&#39;lu&#39;, jISaH vISov wej jIH, &quot;qan puqloD&quot; Dat jatlh, nIH criticizing criticized ghaH?</span></p><p><span>　　naH jajmeymaj &#39;ej li wenliang qaStaHvIS rap ropyaH qach, until jabqangbogh ghaH wej ghov jIH, HoSqu&#39;mo&#39; ropyaH qach puS 4000 nuvpu&#39; &#39;Iq, roD busy. ram ngejtaH li wenliang toD jatlh Hegh, icu jIH chach department tIq press, ngIp pong director, lumerlaw&#39;lu&#39;bogh De&#39;, vIQoy li wenliang naQ mIw jIyajbe&#39;, &#39;ach &#39;ej Do&#39;qu&#39; qaSpu&#39;DI&#39; pagh vay&#39; Data&#39;nISbogh chaq qab mood?</span></p><p><span>　　later, mood laH qechmey vIyaj, chaq rap Hoch critique&#39;a&#39;wIj vaj taH mood, QInvam wej Sey, Quch, &#39;ach pay, pay, vaj maHvaD ghel Hoch nuv jIH Hach volchaHDaj, &#39;e&#39; li wenliang lugh &#39;e&#39; tob qaS, vIjatlh taH. law&#39;, ngoDvam jIyay&#39; chay&#39; QaQ vaj laH yIchegh poH.</span></p><p><span>　　QaQ &#39;e&#39; alive.</span></p><p><span>　　ram pa&#39; january 23rd, pong jupDaj relevant department real ghu&#39; chach patientin neH wuhan ghel jIH. &#39;oS SoH private, pagh on behalf of public ghIq. private jatlh ghaH. vIt SoH jIH je january 21st, 1,523 SID wej poH law&#39;, Hev chach department je motlh ja&#39;chuq&#39;a&#39; fevers chaq 655 ghIq.</span></p><p><span>　　during &#39;e&#39; department chach ghu&#39; poH, not lIj &#39;ej vabDot Hoch outlook yIn subvert SIQpu&#39;bogh nuvpu&#39;.</span></p><p><span>　　qaSchugh wanI&#39;vam veS, chach department legh forefront. &#39;ach vaj ghu&#39; &#39;e&#39; saturated Dub rop mIchHom, basically icu wej Hev, SID je pa&#39; tuv choSay&#39;moHlaH, pollution qaStaHvIS wa&#39;DIch jatlh qIlmeH pIj wej Hev,. pol qa&#39;pu&#39; SID department chach SoQ road Dub &#39;ej Hoch piled &#39;oH neH chach department. SID Qel, queue vIlegh rep neH puS, Qap je wabmeyvetlh wej mamejlaH, je wej wav fever clinic chach pa&#39; &#39;ej, vaS naQ SID, toD pa&#39; povmo&#39; qoj le&#39;mo&#39; pa&#39; naQ SID.</span></p><p><span>　　&#39;ej jatlh QongDaq neH chaH &#39;ej couldn&#39;t yong vavwI&#39; puH Duj, SeH ngaQ wutlh garage ngugh, &#39;ej bot couldn&#39;t yong puH Duj &#39;op SID qorDu&#39;. vIghajbe&#39;, nuvpu&#39; luch qet puH Duj, legh, &#39;ej nuvpu&#39; Heghpu&#39;, nuq feeling, SoHvaD let bech Dajatlh. Hegh loD qaStaHvIS puH Duj, wej qaSpu&#39;bogh lItHa&#39; lupwI&#39;.</span></p><p><span>　　qanwI&#39;, neH Hegh neH jinyintan ropyaH qach, puqloD qoch qan, ngej puqbe&#39;, qaStaHvIS injection, Qorgh son-in-law, Sagh illness, respiratory department &#39;e&#39; son-in-law yIbej cultural laHlIj je ropyaH qach, contact, lughoS Qel ngaj, &#39;ej qatlho&#39; jIHvaD vIlegh tIqwIj Qey, Ha&#39; jatlh nom. tu&#39;lu&#39; pagh mIm qabDaj. Hoch ghot&#39;e&#39;, Hegh. qatlho&#39; puS cha&#39;DIch, &#39;ach je puS cha&#39;DIch. qatlho&#39; &#39;ugh joH rop.</span></p><p><span>　　nIvbogh yIn nuvpu&#39; &#39;Iv qorDu&#39; ngeH custody unit, baS Qav &#39;oH lulegh, &#39;ej chaHvaD not &#39;e&#39; DaqaSmoHbej.</span></p><p><span>　　eve po ghorgh SanejmeH Qap &#39;ej ghIq mIllogh, chinese chu&#39; DIS eve qaw, &#39;ej gho jup ngeH chinese DIS chu&#39; SopwI&#39; neH. jaj, vay&#39; naDpu&#39;DI&#39; porghvetlh wej wIjatlh, alive QaQ.</span></p><p><span>　　ngejtaH loQ Qagh, such as injection wej timely chorDaq Ha&#39; jajlo&#39;, DaH pagh, pagh wa&#39; quarrelwith, pagh wa&#39; vay&#39; fun chaq je SID, knocked Hoch pong jImoDHa&#39;taHvIS net vanglaHbe&#39;bogh, mIS.</span></p><p><span>　　Hegh SID &#39;ej &#39;oH qub qorDu&#39; sadly, jach lulegh HoSqu&#39;mo&#39; pa&#39; &#39;Iq, &#39;Iq. vaj lang SIch Qel SoH ghaH qorDu&#39; toD &#39;ach je Qel jatlh QI&#39;yaH, vaj nom release tlhob qar&#39;a&#39; members qorDu&#39; &#39;op. HoSqu&#39;mo&#39; DeSDu&#39; porghvetlh Hoch vIp chaH lach&#39;eghDI&#39; infection.</span></p><p><span>　　wa&#39; jaj queue. ghaH queue 5 rep lojmIt fever clinic. in line with be&#39; pum, tuQ leather Sutchaj belmoH, bags jen heels tuQ qeng legh, vaj SoHvaD exquisite He&#39;mIn&#39;or ghaH, nep poH nI&#39; yav QaH &#39;e&#39; ngIl be&#39; middle-aged &#39;ach pagh. rachwI&#39; je Qel ghaH QaH pong vIghaj.</span></p><p><span>january 30th SanejmeH qaStaHvIS po, Qap DeSDu&#39; 32 qantaHvIS Hegh nuv&#39;a&#39; chIS-haired ngo&#39; &#39;ej DeSDu&#39; Hegh certificate wInobqang Qel stared. ghobe&#39; chay&#39; jach tears qaStaHvIS Hoch? DuHbe&#39; jach. legh paH, vaj chaq nov worker, pagh channel wIj tu&#39;lu&#39;. HurDaq diagnosis, puqloDDaj moj Hegh certificate.</span></p><p><span>　　&#39;oH nuq pong vIneH. SID &#39;ej QuQ &#39;Iv Hegh qaStaHvIS chach department undiagnose, undiagnose cases &#39;ej HeghDI&#39; juS outbreak, chaHvaD &#39;etlhHommey account &#39;ej &#39;op comfort nob qorDu&#39; vItul, SID SoHvaD law&#39;qu&#39;pu&#39;, SoHvaD law&#39;qu&#39;pu&#39;.</span></p><p><span>&quot;Do&#39;&quot;</span></p><p><span>　　Qel vaj law&#39; DIS, reH vItu&#39; qaStaHvIS jIHvaD knocking vISov pagh, &#39;ej vay&#39; vay&#39; Data&#39;nISbogh SIQpu&#39;bogh personality je chavvam.</span></p><p><span>HeghDI&#39; 9 ben, burgh cancer Hegh vavwI&#39; je HoSchoH Da&#39;elDI&#39; toD yIn vay&#39; latlh Qel &#39;e&#39; vIHar. later neH college entrance examination, Sap teb Hoch medical chaH Dapon &#39;e&#39; yI, &#39;ej tagha&#39; tongji Medical College. HeghDI&#39; graduated jIH vo&#39; college pa&#39; 1997, vIjaH Central ropyaH qach, nuqDaq DuSaQDaq rurbogh Hergh cardiovascular &#39;ej 2010 je chach Hergh director.</span></p><p><span>　　chach ghaHlaw&#39; department rur puqwI&#39; wa&#39;, vaj &#39;oH chenmoH jIH vaj tIn, vaj &#39;e&#39; unite Hoch maH, ghu&#39;vam chenmoH ghu&#39; ngeD wej, vaj cherish, collective cherish.</span></p><p><span>　　puS Hu&#39;, gho jup ngeH &#39;ej &quot;busy tIn chach, bIquv busy &#39;ej beQDaq busy cha&#39; concepts jI&#39;IQ.&quot; jatlh rachwI&#39; wa&#39;</span></p><p><span>　　pa&#39; outbreak, tIq infarction, cerebral infarction gastrointestinal regh, trauma &#39;ej ngaj chach categories. busy bIquv qa&#39;wIj chav busy, ngoQ HuvchoH, SoHvaD Hab mIw, SoHvaD nen, ghaj Hoch Segh SID chay&#39; vay&#39; Data&#39;nISbogh, baS wa&#39; Samta&#39;meH yu&#39; Dotlh NaQoyqa&#39;moHlu&#39;NI&#39;. &#39;ej porghvetlh law&#39; vaj critically rop laH wej Ha&#39; SID je, DuHbe&#39; ropyaH qach tlhap &#39;ej medical naQ qaStaHvIS bISuDqu&#39; &#39;e&#39; busy ghu&#39;vam qar helpless, SoHvaD &#39;IQ.</span></p><p><span>　　wa&#39; po DeSDu&#39; 8 o&#39;clock, Qup Qel, qaStaHvIS department wechat ngeH jIH, &#39;ach wej SanejmeH Qap DaHjaj, uncomfortable jatlh ngoDqoq luHar je vuDmey&#39;e&#39;. che&#39; jIpawnIS naDev, SoH ghewmey Hot &#39;ey jIH jatlh je &#39;Itlh jIH neH legh 8 o&#39;clock, nuqDaq chay&#39;pen vay&#39; Samta&#39;meH. : HoSnIS luj ghaH HItlhej neH micro-jabbI&#39;ID, jatlh &#39;e&#39; lan yIteb mI&#39; highly nub cases wItI&#39;nISmo&#39; nugh pong chach department Dev SoH, &#39;ej maH! ghaH jIyaj because of je Qel, conscience &#39;ach anxious &#39;ej jIHvaD laH sue SoH ghIq, vaj department chach director, chunwI&#39;pu&#39; SoH?</span></p><p><span>　　later, puS jaj teq &#39;ej je motlh Qap Qel. &#39;e&#39; Haj Hegh &#39;ej jIDoy&#39;be&#39; &#39;ach pay&#39; qaD vaj law&#39; SID Hot, SoHvaD ghor, vISIQ, encountered ghaH wej jatlh ghaH.</span></p><p><span>　　je Qel, especially nIvbogh Qel &#39;ej QuQ lughoS Qutlh &#39;Iv, &#39;oH simply wav&#39;eghchugh chaH psychologically &#39;ej HeghDI&#39; ghom vISIQ, jach Qel rachwI&#39; &#39;ej &#39;op. wa&#39; latlh jach &#39;ej latlh bIH&#39;e&#39;, jach SeH ghorgh tlhe&#39; bIH&#39;e&#39; ngej Sovbe&#39; Hoch.</span></p><p><span>　　around, january mid--paS ropyaH qach ra&#39;wI&#39; pum rop, doorman wej vice-presidents &#39;ej DaH nobvam. &#39;ay&#39; medical chief puqbe&#39; je rop &#39;ej leS ghaH qabDaj juH. vaj basically poH &#39;oH ghojwI&#39;pu&#39;lI&#39; pagh vIHtaHbogh SoH, ghob SoH pa&#39;, vaj feeling.</span></p><p><span>　　nuvpu&#39; around jIH je qamDu&#39;DajDaq pum wa&#39; pong wa&#39; started. january 18th, DeSDu&#39; 8: 30 a.m., Qel wa&#39;DIch qang maH &#39;ej &#39;e&#39; director, muvmoH, wej meQ, neH ct, yIteb mill HuHwIj HIvje&#39; chenmoH &#39;e&#39; jatlh. &#39;e&#39; pIghna&#39; ghaH je muja&#39; yopwaH bID poH later, ngoy&#39; rachwI&#39; in charge of isolation Qo&#39;noS qab law&#39;. qaStaHvIS ram, pum nach ghojmoq. SoHvaD real wa&#39;DIch feeling legh poH-Do&#39;, mo&#39; &#39;eq pum &#39;ej laH lItHa&#39; che&#39;ron &#39;eq.</span></p><p><span>　　contact SoQ wej nuv neH, va pum neH &#39;uch jIH neH daily vum, wej pIghna&#39; ghot&#39;e&#39;. nuvpu&#39; maQap yay&#39;moHwI&#39; &#39;e&#39; DaHar ropyaH qach. &#39;oH poj jIH jInaD&#39;eghta&#39;, jIchegh mo&#39; asthma vIghaj jIH &#39;ej ghaH &#39;op pur hormones, chaq suppressed viruses qaStaHvIS HuHwIj.</span></p><p><span>　　&#39;e&#39; wIlo&#39;bogh reH vItu&#39; chach nuv nuvpu&#39; sentimental-qaStaHvIS jungwoq ropyaH qach, chach departments qaStaHvIS Hoch departments Dotlh relatively &#39;eS, mo&#39; &#39;e&#39; chach department pagh &#39;ach channel, SID sedated neH tlhegh mopqoqmey maH. bIquv neglect reH SaH qaStaHvIS epidemic.</span></p><p><span>　　qaStaHvIS jaj &#39;eq, pa&#39; &#39;oHbe&#39; yap supplies, &#39;ej rut protective Sut, assigned department chach laHlIj SoHvaD law&#39;qu&#39;pu&#39; &#39;ej jIQeH ghojmoq chaH tuQ Qap vIlegh. later, Hoch Sutchaj belmoH So&#39;, &#39;ej chaH neH chaH lach&#39;eghDI&#39; department HInob nIvbogh directors.</span></p><p><span>　　tu&#39;lu&#39; je Sop yu&#39;. SID rav poH management mIS, simply laH wej Qub chaH chach department reH qab Soj vISop, Sop &#39;ej chech, yIteb row pu&#39;HIch naDev ghaj law&#39; departments DoH Qap, pagh naDev fever clinic wechat ghom wIghaj, Qel bep tu&#39;lu&#39;, &quot;chach department neH diapers...&quot; maSuv mIp tlhop tlhegh, ghot&#39;e&#39; HarmoHDI&#39;, rut tIq qar QeH.</span></p><p><span>　　law&#39; collective qar QaQ, neH rop tInwI&#39; qul tlhegh Suq. porghvetlh, ngej puS 40 nuvpu&#39; qaStaHvIS chach department. ghom Hoch ropwI&#39;pu&#39; nuvpu&#39;, baS &quot;chach rop ghom&quot; pong, qach jIH &#39;ej unlucky &#39;ej &#39;oH choH &quot;chach refuel ghom&quot; &#39;oH jatlh nach ghojmoq. je mentality &#39;IQ, SoHvaD jochqu&#39;, SoHvaD bep Qu&#39; nuvpu&#39; rop, vaj ngoDqoq luHar be, Hoch latlh, vISov mentality SoH QaH maH.</span></p><p><span>　　puq, majQa&#39;, vay&#39; ruvvam nge&#39;ta&#39; HItlha&#39; QupwI&#39;pu&#39;. vaj qaSpu&#39;DI&#39; outbreak neH departments chach, pa&#39; Sep law&#39;, investment laH ghur Sep chach department potlh je &#39;e&#39; vItul.</span></p><p><span>　　unarose pagh chav</span></p><p><span>february 17th, wechat vIHev vo&#39; classmate tongji ropyaH qach &#39;Iv &quot;jIQoS&quot; ngeH jIH &#39;ej ghIq: Fortunately, mejDI&#39; &#39;ej &#39;op nuv qawmoH qaStaHvIS poH. vaj hadn&#39;t ghoS, pa&#39; chaq pagh li wenliang je chorgh, &#39;ej chaq tu&#39;lu&#39; fewer nuvpu&#39; SovwI&#39;pu&#39;&#39;e&#39;.</span></p><p><span>　　porghvetlh, wej tugh Qel je qorDu&#39; naQ ngej wIghaj. father-in-law, mother-in-law-loDnal infection cha&#39; tugh Qel, tugh Qel vav, SoS, be&#39;nI&#39;, loDnal,-ghaH lach&#39;eghDI&#39; 5 nuvpu&#39; ngej. &#39;e&#39; tu&#39; virus vaj &#39;eq &#39;ach tlhe&#39; &#39;oH vaqwI&#39; QIH &#39;ej cost tIn je Qub Hoch.</span></p><p><span>　　cost qaStaHvIS Hoch mIw. in addition to Heghpu&#39;, je bech rop.</span></p><p><span>　　physical je tam maH &quot;chach refuel ghom&quot;, pIj maH, vay&#39; tIq rate ghel reH 120 poH ghap lang, Qu&#39; &#39;oH n&#39;go? &#39;e&#39; ghob&#39;e&#39; potlh, vIH lIm, mup jechlaHbe&#39;bogh vay&#39;e&#39; yIn, qaSpu&#39;DI&#39; ben wej ghaH tIq failure? later HuD leng laH SIbI&#39; toS latlhpu&#39;, chaq chaH wej, vaj DuH.</span></p><p><span>　　&#39;ej wuhan. &#39;e&#39; wuhan Daq lively, DaH mIw Hoch, nIvbogh tam, laH wej je&#39; &#39;ach je Sep ngaq naQ chenmoH Doch qar&#39;a&#39;. puS Hu&#39;, vul, toD je, vaj heartbeat je &#39;ach reH neH coma ghojmoq neH guangxi neH Qap pay&#39; medical team. vaj doesn&#39;t chol ghaH, poH QaQ laH ghaj ghaH qabDaj juH &#39;ej Qo&#39; lumerlaw&#39;lu&#39;bogh. vaj favor, owe Hoch maH qar &#39;e&#39; vIHar.</span></p><p><span>　　outbreak SIQpu&#39;bogh, law&#39; nuvpu&#39; neH ropyaH qach SuS nIvmo&#39;. ngerDaj paj puS medical naQ, &#39;op backbones, DaH nobvam ghaj. pa&#39; qech profession Hoch, common Dapvetlh loDHom loQ shaken-vaj let Qap chotwI&#39;&#39;e&#39; lugh? rur jiang xueqing, Qap ghaH je seriously DellaHchu&#39;be&#39; SID, Hoch DIS chu&#39; eve Qap. DaHjaj, wechat jiang xueqing puqbe&#39;, &#39;e&#39; nob vavDaj poH SID jatlh ngabchu&#39; ngeH vay&#39;.</span></p><p><span>　　countless Qub ghaj, &#39;oHbe&#39; &#39;e&#39; je juH &#39;e&#39; housewife? qaSpu&#39;DI&#39; outbreak, basically wej yIjaH jIH &#39;ej be&#39;nI&#39;wI&#39; qabDaj juH, petaQ Qorgh puq HIboQ, Hur yIn loDnal. jIHvaD wej ghov potlhwIj cha&#39;DIch, video not vItu&#39; legh, SoHvaD DaqwIj vISovbe&#39;, puq ngeD wej, ghorgh boghmoH jIH cha&#39;DIch bogh ghaH tlhejmeH 10 catties, gestational diabetes je chaw&#39;a&#39;, originally je&#39; jIH, porghvetlh je weaned-vay&#39; decision, HeghDI&#39; loQ jI&#39;IQ, jIHvaD yIja&#39; loDnal, &#39;e&#39; vIq ta&#39;, laH encounter nuv yIn &#39;ej participants wej neH, may&#39; ghaH je SoHvaD meaningful ta&#39;, ngaj poH &#39;ej qaSpu&#39;DI&#39; tIHmey Hoch motlh, botlhDaq team SuD je DaneH&#39;a&#39; jatlh Sun wItI&#39;nISmo&#39; recall, je SoHvaD lo&#39;laH SIQpu&#39;bogh.</span></p><p><span>qaStaHvIS po february 21st, jIjatlhpu&#39; &#39;ej puS yu&#39;, tlhob mojpu&#39; vIneH such as chugh &#39;e&#39; criticism jaj criticizing jIH QIH vItu&#39;? laH tlhIj jIH vIneH. &#39;ach ngIl wej vIja&#39;. jIHvaD yIja&#39; pagh vay&#39; occasion jatlh jIQoS. &#39;ach &#39;e&#39; &#39;e&#39; qap tlhab pagh chaH lach&#39;eghDI&#39;, reH Hoch SeH forward ghoS &#39;ej ghob&#39;e&#39; tu&#39;lu&#39; vay&#39; vIt, vay&#39;, pIm ghogh, lugh ghob&#39;e&#39; ghaj qo&#39; &#39;aghta&#39; Doch reH vItu&#39;?</span></p><p><span>　　je nuvpu&#39; wuhan, chaH lach&#39;eghDI&#39; veng wej &#39;a baS wa&#39; maHvaD? &#39;ach ordinary yIn pa&#39;, chay&#39; luxurious happiness DaH recall maH. ghu ghaH lutlhej slide ladder QujmeH pagh Ha&#39; ghaH movie vIlegh neH qa&#39; jIH loDnal ghobe&#39; ordinary, until DaH &#39;eblIj happiness &#39;uch, Hot, &#39;oHbe&#39; nobmeH happiness chav DaH.</span></p><p><strong><span>特别鸣谢：</span></strong></p><p><strong><span>精灵语翻译App，必应翻译</span></strong></p><p><strong><span>武汉市中心医院医生艾芬</span></strong></p><p><strong><span>《人物》杂志社</span></strong></p><p><strong><span>以及所有传递真实声音的人们</span></strong></p><p><img src="640.webp" referrerpolicy="no-referrer" alt="img"></p><p><strong><span>Live Long and Prosper!</span></strong></p></div>
+</body>
+</html>
