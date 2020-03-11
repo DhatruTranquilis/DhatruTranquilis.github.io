@@ -8,3 +8,6 @@
 
 4. [Whistle Distributer (encoding=Morse)](https://dhatrutranquilis.github.io/ar_04)
 
+5. [Whistle Distributer (encoding=Telegramme)](https://dhatrutranquilis.github.io/ar_05)
+
+6. [Whistle Distributer (encoding=Elvish+Klingon)](https://dhatrutranquilis.github.io/ar_06)
