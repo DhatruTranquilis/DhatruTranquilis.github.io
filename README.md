@@ -13,3 +13,6 @@
 6. [Whistle Distributer (encoding=Elvish+Klingon)](https://dhatrutranquilis.github.io/ar_06)
 
 7. [Whistle Distributer (encoding=Cantonese)](https://dhatrutranquilis.github.io/ar_07)
+
+
+8. [Whistle Distributer (A summary)](https://dhatrutranquilis.github.io/ar_08)
